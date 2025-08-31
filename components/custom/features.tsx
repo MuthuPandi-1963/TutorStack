@@ -28,17 +28,17 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="relative min-h-fit py-20 px-6 bg-gradient-to-b  ">
+    <section id="features" className="relative min-h-fit h-full py-20 px-6 bg-gradient-to-b  w-full">
          <div className="absolute inset-0 -z-10">
-                <div className="absolute top-0 left-1/2 w-[800px] h-[800px] -translate-x-1/2 bg-purple-900/30 blur-[120px] rounded-full"></div>
-                <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-indigo-500/20 blur-[150px] rounded-full"></div>
+                <div className="absolute top-0 left-1/2 w-full h-[900px] -translate-x-1/2 bg-purple-900/30 blur-[120px] rounded-full"></div>
+                <div className="absolute bottom-0 right-1/4 w-full h-[900px] bg-indigo-500/20 blur-[150px] rounded-full"></div>
               </div>
       <div className="max-w-7xl mx-auto text-center">
         {/* Section Title */}
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           Why Choose <span className="text-purple-400">Tutor Stack</span>?
         </h2>
-        <p className="text-gray-800 max-w-2xl mx-auto mb-12">
+        <p className=" max-w-2xl mx-auto mb-12">
           Our platform empowers you to learn coding effectively with structured lessons, expert guidance, and real-world projects.
         </p>
 

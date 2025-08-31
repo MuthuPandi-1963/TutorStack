@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils"
+"use client"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -9,15 +9,15 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { EyeIcon, EyeOff } from "lucide-react"
 import Link from "next/link"
+import { useState } from "react"
 import { BsGithub, BsGoogle } from "react-icons/bs"
 
-export default function LoginForm({
-  className,
-  ...props
-}: React.ComponentProps<"div">) {
+export default function LoginForm() {
+  const [showPassword,setShowPassword] = useState<boolean>(false)
   return (
-    <div className={cn("flex flex-col gap-6", className)} {...props}>
+    <div className={"flex flex-col gap-6"} >
       <Card>
         <CardHeader className="text-center">
           <CardTitle className="text-xl">Welcome back</CardTitle>
@@ -29,7 +29,7 @@ export default function LoginForm({
           <form>
             <div className="grid gap-6">
               <div className="flex flex-col gap-4">
-                <Button variant="outline" className="w-full">
+                <Button  className="w-full">
                   <BsGithub/>
                   Login with Github
                 </Button>
@@ -49,7 +49,7 @@ export default function LoginForm({
                   <Input
                     id="email"
                     type="email"
-                    placeholder="m@example.com"
+                    placeholder="xyz@example.com"
                     required
                   />
                 </div>
@@ -58,20 +58,25 @@ export default function LoginForm({
                     <Label htmlFor="password">Password</Label>
                     <a
                       href="#"
-                      className="ml-auto text-sm underline-offset-4 hover:underline"
+                      className="ml-auto text-sm underline-offset-4 hover:underline hover:text-purple-400"
                     >
                       Forgot your password?
                     </a>
                   </div>
-                  <Input id="password" type="password" required />
+                  <div className="flex items-center gap-x-3">
+                  <Input id="password" type={showPassword ? "text" : "password"} placeholder="Enter a Password"  required />
+                  <Button type="button" onClick={()=>setShowPassword(prev=>!prev)}>
+                    {showPassword ? <EyeOff/> : <EyeIcon/>}
+                  </Button>
+                  </div>
                 </div>
-                <Button type="submit" className="w-full">
+                <Button type="submit" className="w-full bg-purple-400 hover:bg-purple-600"  >
                   Login
                 </Button>
               </div>
-              <div className="text-center text-sm">
+              <div className="text-center text-sm ">
                 Don&apos;t have an account?{" "}
-                <Link href="/signup" className="underline underline-offset-4">
+                <Link href="/signup" className="underline underline-offset-4 hover:text-purple-400">
                   Sign up
                 </Link>
               </div>

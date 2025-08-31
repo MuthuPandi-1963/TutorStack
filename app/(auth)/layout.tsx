@@ -53,18 +53,28 @@
 // }
 
 
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 import { ReactNode } from "react"
+import { BiLeftArrowAlt } from "react-icons/bi"
 
 // import { LoginForm } from "@/components/login-form"
 
 export default function Layout({children}:{children :ReactNode}) {
   return (
-    <div className="relative overflow-hidden flex h-screen flex-col items-center justify-center gap-6 p-6 md:p-10">
+    <div className="relative overflow-hidden flex min-h-fit flex-col items-center justify-center gap-6 p-6 md:p-10">
+      <Button  className="absolute top-3 left-3 ">
+        <Link href={"/"} className="flex items-center">
+        <BiLeftArrowAlt className="mr-1"/> <span>Back</span>
+        </Link>
+      </Button>
       <div className="absolute inset-0 -z-10">
                 <div className="absolute top-0 left-1/2 w-[800px] h-[800px] -translate-x-1/2 bg-purple-900/30 blur-[120px] rounded-full"></div>
                 <div className="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-indigo-500/20 blur-[150px] rounded-full"></div>
               </div>
+              
       <div className="flex w-full max-w-sm flex-col">
+        
         <a href="#" className="mb-4 flex items-center gap-2 self-center font-medium text-xl">
           <div className=" flex  items-center justify-center rounded-md ">
             <img src="/logo.png" alt="" className="w-10 h-10 object-cover" />

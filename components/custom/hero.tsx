@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 mt-30 sm:mt-10 overflow-clip">
+    <section className="relative min-h-fit z-40 flex flex-col items-center justify-center text-center px-6  bg-[url('/bg.jpg')] bg-center bg-cover h-screen overflow-clip">
       
       {/* Background abstract waves or gradients */}
      
@@ -16,7 +16,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="text-4xl md:text-6xl font-bold leading-tight mb-6 text-white"
+        className="text-4xl md:text-6xl mt-30 sm:mt-0 font-bold leading-tight mb-6 text-white"
       >
         Smarter Learning <br />
         With <span className="text-purple-400">Tutor Stack</span>

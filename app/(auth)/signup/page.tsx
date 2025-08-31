@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils"
+"use client"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -11,13 +11,13 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { BsGithub, BsGoogle } from "react-icons/bs"
 import Link from "next/link"
+import { EyeIcon, EyeOff } from "lucide-react"
+import { useState } from "react"
 
-export default function SignupForm({
-  className,
-  ...props
-}: React.ComponentProps<"div">) {
+export default function SignupForm() {
+  const [showPassword,setShowPassword] = useState<boolean>(false)
   return (
-    <div className={cn("flex flex-col gap-6", className)} {...props}>
+    <div className={"flex flex-col gap-6"} >
       <Card>
         <CardHeader className="text-center">
           <CardTitle className="text-xl">Welcome back</CardTitle>
@@ -29,7 +29,7 @@ export default function SignupForm({
           <form>
             <div className="grid gap-6">
               <div className="flex flex-col gap-4">
-                <Button variant="outline" className="w-full">
+                <Button  className="w-full">
                                   <BsGithub/>
                                   Login with Github
                                 </Button>
@@ -58,7 +58,7 @@ export default function SignupForm({
                   <Input
                     id="email"
                     type="email"
-                    placeholder="m@example.com"
+                    placeholder="xyz@example.com"
                     required
                   />
                 </div>
@@ -72,10 +72,15 @@ export default function SignupForm({
                       Forgot your password?
                     </a>
                   </div>
-                  <Input id="password" type="password" required />
+                  <div className="flex items-center gap-x-3">
+                  <Input id="password" type={showPassword ? "text" : "password"} placeholder="Enter a Password"  required />
+                  <Button type="button" onClick={()=>setShowPassword(prev=>!prev)}>
+                    {showPassword ? <EyeOff/> : <EyeIcon/>}
+                  </Button>
+                  </div>
                 </div>
-                <Button type="submit" className="w-full">
-                  Login
+                <Button type="submit" className="w-full bg-purple-400 hover:bg-purple-600">
+                  Sign Up
                 </Button>
               </div>
               <div className="text-center text-sm">

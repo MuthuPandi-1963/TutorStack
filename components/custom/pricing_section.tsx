@@ -13,7 +13,7 @@ const plans = [
   },
   {
     name: "Yearly",
-    price: "₹999",
+    price: "₹4999",
     duration: "per year",
     features: ["Save more with yearly plan", "Unlimited course access", "Priority support"],
     highlight: true,
@@ -28,7 +28,11 @@ const plans = [
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="py-20 px-6">
+    <section id="pricing" className="relative py-20 px-6">
+      <div className="absolute inset-0 -z-10">
+                <div className="absolute top-0 left-1/2 w-full h-[900px] -translate-x-1/2 bg-purple-900/30 blur-[120px] rounded-full"></div>
+                <div className="absolute bottom-0 right-1/4 w-full h-[900px] bg-indigo-500/20 blur-[150px] rounded-full"></div>
+              </div>
       <div className="max-w-7xl mx-auto text-center">
         {/* Title */}
         <h2 className="text-3xl md:text-4xl font-bold mb-4">

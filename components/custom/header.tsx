@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { FiMenu } from "react-icons/fi";
 import { useState } from "react";
 import { ThemeToggle } from "../themeToogle";
+import { XIcon } from "lucide-react";
 
 
 export default function Header() {
@@ -51,13 +52,14 @@ export default function Header() {
           className="md:hidden text-white"
           onClick={() => setOpen(!open)}
         >
-          <FiMenu size={24} />
+          {open ? <XIcon size={24}/> :
+          <FiMenu size={24} /> } 
         </button>
       </div>
 
       {/* Mobile dropdown */}
       {open && (
-        <div className="md:hidden bg-black/90 backdrop-blur-lg p-6 text-center space-y-4">
+        <div className="md:hidden bg-black/90 backdrop-blur-lg p-6 text-center space-y-4" >
           <Link href="#features" className="block text-white">Features</Link>
           <Link href="#courses" className="block text-white">Courses</Link>
           <Link href="#pricing" className="block text-white">Pricing</Link>
