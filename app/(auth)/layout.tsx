@@ -62,7 +62,7 @@ import { BiLeftArrowAlt } from "react-icons/bi"
 
 export default function Layout({children}:{children :ReactNode}) {
   return (
-    <div className="relative overflow-hidden flex min-h-fit flex-col items-center justify-center gap-6 p-6 md:p-10">
+    <div className="relative overflow-hidden flex min-h-screen flex-col items-center justify-center gap-6 p-6 md:p-10">
       <Button  className="absolute top-3 left-3 ">
         <Link href={"/"} className="flex items-center">
         <BiLeftArrowAlt className="mr-1"/> <span>Back</span>
